@@ -1,0 +1,4 @@
+supernodes=-l 192.227.232.228:9081
+network=swollen_acres
+address=172.32.0.7
+keyfile=/var/lib/n2n/hargrave_pn.kf

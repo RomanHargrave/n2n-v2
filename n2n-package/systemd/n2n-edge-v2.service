@@ -1,0 +1,15 @@
+[Unit]
+Description=n2n VPN edge V2
+After=network.target auditd.service
+ConditionPathExists=/var/lib/n2n
+
+[Service]
+User=n2n
+Group=n2n
+EnvironmentFile=/var/lib/n2n/edge_v2.environment
+ExecStart=/var/lib/n2n/edge -f $supernodes -a $address -c $network -K $keyfile -d n2n0
+Restart=on-failure
+KillMode=process
+
+[Install] 
+WantedBy=multi-user.target
